@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebApplication1_HW_22_11_2024.Models.Product>
+
+<h1>Результаты поиска</h1>
+<form asp-action="Search" method="get">
+    <input type="text" name="keyword" placeholder="Введите ключевое слово" />
+    <button type="submit">Искать</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Index">Назад к списку товаров</a>

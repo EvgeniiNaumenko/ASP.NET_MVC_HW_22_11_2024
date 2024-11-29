@@ -1,0 +1,20 @@
+﻿@model WebApplication1_HW_22_11_2024.Models.Product
+
+<h1>Добавить товар</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Название:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label>Описание:</label>
+        <textarea asp-for="Description"></textarea>
+    </div>
+    <div>
+        <label>Цена:</label>
+        <input asp-for="Price" />
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+<a asp-action="Index">Назад к списку товаров</a>

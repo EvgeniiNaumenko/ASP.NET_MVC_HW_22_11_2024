@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication1_HW_22_11_2024.Models.Product>
+
+<h1>Список товаров</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Цена</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Price</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@product.Id">Подробнее</a> |
+                    <form asp-action="Delete" asp-route-id="@product.Id" method="post" style="display:inline;">
+                        <button type="submit">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create">Добавить новый товар</a>
